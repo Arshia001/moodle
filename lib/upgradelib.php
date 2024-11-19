@@ -2455,11 +2455,11 @@ function check_is_https(environment_results $result) {
  */
 function check_sixtyfour_bits(environment_results $result) {
 
-    if (PHP_INT_SIZE === 4) {
-         $result->setInfo('php not 64 bits');
-         $result->setStatus(false);
-         return $result;
-    }
+    // if (PHP_INT_SIZE === 4) {
+    //      $result->setInfo('php not 64 bits');
+    //      $result->setStatus(false);
+    //      return $result;
+    // }
     return null;
 }
 

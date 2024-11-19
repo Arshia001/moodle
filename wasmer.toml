@@ -1,0 +1,30 @@
+[package]
+name = 'arshia001/moodle'
+version = '4.5.0'
+readme = 'README.md'
+
+# See more keys and definitions at https://docs.wasmer.io/registry/manifest
+
+[dependencies]
+"php/php" = "=8.3.402"
+
+[fs]
+"/app" = "."
+
+[[command]]
+name = "run"
+module = "php/php:php"
+runner = "wasi"
+
+[command.annotations.wasi]
+main-args = [
+    "-t",
+    "/app",
+    "-S",
+    "localhost:8080",
+    "-d",
+    "memory_limit=3800M",
+    "-d",
+    "max_input_vars=5000",
+]
+env = ["PHPRC=/config/"]
